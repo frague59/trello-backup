@@ -31,7 +31,7 @@ if (strlen($application_token) < 30) {
     // 0) Fetch the Application tokenn
     // Source: https://trello.com/docs/gettingstarted/index.html#getting-a-token-from-a-user
     // We get the app token with "read" only access forever
-    $url_token = "https://trello.com/1/authorize?key=" . $key . "&name=My+Trello+Backup&expiration=never&response_type=token";
+    $url_token = "https://trello.com/1/authorize?key=" . urlencode($key) . "&name=" . urlencode($backup_name) . "&expiration=never&response_type=token";
     die("Go to this URL with your web browser (eg. Firefox) to authorize your Trello Backups to run:\n$url_token\n");
 }
 
